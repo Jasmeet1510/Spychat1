@@ -1,11 +1,11 @@
-from spy_details import spy
+from spy_details import spy                         #importing details from another file
 print "Hello World!!"
 print "let's get started"
 
-STATUS_MESSAGES = ['Cant talk Spychat only', 'Available', 'Busy', 'Sleeping', 'At the movie', 'At the work']
-friends = [{'name':'komal','age':25,'rating':5.8,'is_online':True},{'name': 'yash','age':26,'rating':5.9,'is_online':True}]
+STATUS_MESSAGES = ['Cant talk Spychat only', 'Available', 'Busy', 'Sleeping', 'At the movie', 'At the work']            #list declared
+friends = [{'name':'komal','age':25,'rating':5.8,'is_online':True},{'name': 'yash','age':26,'rating':5.9,'is_online':True}]     #dictionary declared
 
-def add_status(C_S_M):
+def add_status(C_S_M):                              #function declared to add a status
     if C_S_M != None:
         print "Your current status is: "+C_S_M
     else:
@@ -27,7 +27,7 @@ def add_status(C_S_M):
         print "Invalid Entry Please Try Again!!"
     return new_status
 
-def add_friend():
+def add_friend():                                   #function to add a friend
     frnd = {
         'name': '',
         'age': 0,
@@ -45,7 +45,7 @@ def add_friend():
         print "Alert! Friends with these values cant be added"
     return len(friends)
 
-def select_frnd():
+def select_frnd():                                                      #function to select a friend
     serial_no = 1
     for frnd in friends:
         print str(serial_no) + " " + frnd['name']
@@ -58,7 +58,7 @@ def start_chat(spy_name,spy_age,spy_rating):
     current_status_message = None
     show_menu = True
     while show_menu:
-        menu_choice = input("What would you like to do ? \n 1. Add a status \n 2. Add a Friend \n 3.Send a message \n  0. Exit \n ")
+        menu_choice = input("What would you like to do ? \n 1. Add a status \n 2. Add a Friend \n 3.Send a message \n 0.Exit \n ")             #getting choice from spy
         if menu_choice == 1:
            current_status_message = add_status(current_status_message)
            print "Your new status is updated to " + current_status_message
